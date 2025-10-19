@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset = "UTF-8" />
+    <meta name="viewport" content="width=device-width, height = device-height, initial-scale=1.0">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+      body {
+        
+
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(45deg, #ff6b6b, #feca57, #ff9ff3, #54a0ff);
+        background-size: 400% 400%;
+        animation: gradientShift 8s ease-in-out infinite;
+        position: relative;
+      }
+        button {
+  cursor: pointer;
+  position: absolute;bottom: 10%; left:40%; padding : 10px 15px; background-color: #ff6b6b; color: white; border: none; border-radius: 5px; cursor: pointer; z-index: 20;
+}      
+#loi1, #loi2, #loi3, #loi4, #loi5 {
+  font-family: 'Great Vibes', cursive;
+  color: #ff4d6d;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  font-size: 2.5rem; 
+  text-align: center;
+  line-height: 1.2;
+}
+
+      @keyframes gradientShift {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+
+      .hearts-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        overflow: hidden;
+        z-index: 100;
+      }
+
+      .heart {
+        position: absolute;
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 20px;
+        animation: floatUp 6s linear infinite;
+      }
+
+      @keyframes floatUp {
+        0% {
+          transform: translateY(100vh) rotate(0deg);
+          opacity: 0;
+        }
+        10% {
+          opacity: 1;
+        }
+        90% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-100px) rotate(360deg);
+          opacity: 0;
+        }
+      }
+
+      .sparkles {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-image: 
+          radial-gradient(2px 2px at 20px 30px, rgba(255,255,255,0.4), transparent),
+          radial-gradient(1px 1px at 40px 70px, rgba(255,255,255,0.3), transparent),
+          radial-gradient(1px 1px at 90px 40px, rgba(255,255,255,0.4), transparent);
+        background-repeat: repeat;
+        background-size: 200px 100px;
+        animation: sparkle 3s linear infinite;
+        z-index: 1;
+      }
+
+      @keyframes sparkle {
+        0% { transform: translateY(0px); }
+        100% { transform: translateY(-100px); }
+      }
+
+      .to {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+        width: auto;
+        position: relative;
+        z-index: 10;
+       
+      }
+.abc, .xyz {
+    transition: opacity 0.5s ease;
+}
+      .to img {
+        max-width: 100%;
+        max-height: 100vh;
+        object-fit: contain;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      }
+.colorful {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* căn giữa */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 30px;
+  max-width: 80vw;
+  border-radius: 20px;
+  background: linear-gradient(45deg, 
+    #ff6b6b, 
+    #feca57, 
+    #1dd1a1, 
+    #54a0ff, 
+    #5f27cd, 
+    #ff9ff3);
+  background-size: 400% 400%;
+  animation: rainbowShift 6s ease infinite;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 150;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+ .abc {
+            background-color: #F8BBD0;
+            width: 30vw;
+            height: 80vh;
+            padding-bottom : 20px;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            border-radius: 10px;
+            margin-top:10px;
+            border-color:#F48FB1;
+            border-width: 5px;
+            opacity: 0;
+            pointer-events: none;
+            visibility : hidden;
+            z-index: 30;
+            position:fixed;
+            left: 35%;     
+            transition: opacity 1s ease, visibility 1s ease;
+            
+        }
+        .xyz {
+            position: fixed;
+            border-radius: 10px;
+            display:flex;
+            width:80%;
+            height:60%;
+            background-color: #FFF8FB;
+            margin: 20px;
+            z-index: 10;
+            justify-content: center;
+            align-items: flex-start;
+            opacity:0;
+            visibility: hidden;
+            z-index: inherit;
+        }
+        @keyframes donglai {
+          0% { transform : scale(1);};
+          50% { transform : scale(0.5);}
+          100% { transform : scale(0); opacity: 0; visibility: hidden; pointer-events: none; }
+
+        }
+
+@keyframes rainbowShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes tora {
+  0% { transform: scale(0.5); opacity: 0; }
+  80% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.micro-div {
+            position:fixed;
+            width: 3vw;  
+            height: 6vh; 
+            margin: 0; 
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            box-sizing: border-box; 
+            z-index:10000;
+            background-color: white;
+            opacity: 0;
+            visibility: hidden;
+            transition : opacity 1s ease, visibility 1s ease;
+        }
+       
+    </style>
+  </head>
+  <body>
+       <div id="het" style="font-family: 'Great Vibes', cursive; color:#ff4d6d; text-shadow:0 2px 4px rgba(0,0,0,0.1); font-size:2.5rem; opacity:0; position:fixed; top:40%; left:50%; transform:translateX(-50%); z-index:10000000; display:flex; justify-content:center; align-items:center; text-align:center; padding:0 16px;">
+      Cuối cùng thì chúc em có 1 ngày 20/10 vui vẻ nha💖💗
+    </div>
+   <!-- div hiện lời chúc -->
+    <div class="abc" id = "loi1">
+      <button onclick = "dong(event)">Đóng</button>
+      <div class="xyz" id = "loi11" > Anh chúc em sẽ luôn có thật nhiều cơ hội làm điều em thích — được đi show, gặp những nghệ sĩ mà em yêu mến, và quan trọng nhất là giữ mãi ngọn lửa đam mê rực cháy này nha 💫</div>
+    </div>
+    <div  class="abc" id = "loi2">
+      <button onclick = "dong(event)">Đóng</button>
+      <div class="xyz" id = "loi22"> Chúc em mỗi ngày đều tràn ngập niềm vui và hạnh phúc, mọi nỗi buồn nếu có cũng sẽ tan biến thật nhanh he.....</div>
+    </div>
+    <div class="abc" id = "loi3">
+      <button onclick = "dong(event)">Đóng</button>
+      <div class="xyz" id = "loi33"> Anh tin rằng trên con đường em đã chọn, dù có bao thử thách thì em vẫn sẽ vững bước và tỏa sáng rực rỡ. Chúc em luôn mạnh mẽ, kiên định và thành công với chính con đường đó nha của mình 🌙</div>
+    </div>
+    <div class="abc" id = "loi4">
+      <button onclick = "dong(event)">Đóng</button>
+      <div class="xyz" id = "loi44"> Chúc em ngày càng đẹp hơn  — từ dáng vẻ, nụ cười, cho đến sự tự tin. Em không cần cố gắng để hoàn hảo, vì ngay cả khi giản đơn nhất, em vẫn khiến người khác chẳng thể rời mắt gòi đó 💞 </div>
+    </div>
+    <div class="abc" id = "loi5">
+      <button onclick = "dong(event)">Đóng</button>
+      <div class="xyz" id = "loi55"> Anh mong rằng em sẽ gặp được một người thật xứng đáng — người biết trân trọng, yêu thương, và luôn khiến em cảm thấy yên bình mỗi khi ở bên 💌</div>
+    </div>
+
+    <div class="colorful"></div>
+    <canvas id="confettiCanvas" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:200;"></canvas>
+    <div class="sparkles"></div>
+    <div class="hearts-container" id="heartsContainer"></div>
+    
+    <div class = "to">
+      <div style="border-radius: 20px;">
+        <img src="qa1.jpg" style = " top: 10px;"alt="QA1" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+      </div>
+      <div style="border-radius: 20px;">
+        <img src="qa2.jpg" style ="top:10px"  id="imgQA2" alt="QA2" usemap="#abc" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+      </div>
+    </div>
+    <map name="abc">
+<area shape="poly"
+      coords="443,672,449,663,473,657,485,661,454,676,486,678"
+      href="#"
+      alt="Vật thể bí ẩn"
+      onclick="chuc1(); return false;">
+<area shape="poly"
+      coords="72,342,88,339,94,355,90,376,72,377,69,357,72,342"
+      href="#"
+      alt="Vật thể bí ẩn"
+      onclick="chuc5(); return false;">
+<area shape="poly"
+      coords="114,345,114,353,167,369,167,360,114,345"
+      href="#"
+      alt="Vật thể bí ẩn"
+      onclick="chuc2(); return false;">
+<area shape="poly"
+      coords="444,492,445,450,483,443"
+      href="#"
+      alt="Vật thể bí ẩn"
+      onclick="chuc3(); return false;">
+<area shape="poly"
+      coords="261,191,248,219,272,232,279,195,261,191"
+      href="#"
+      alt="Vật thể bí ẩn"
+      onclick="chuc4(); return false;">
+  </map>
+  <script>
+function dong(event) {
+    const m = event.target.closest('.abc');
+    const n = m.querySelector('.xyz');
+    if (!m || !n) return;
+    m.style.animation = 'donglai 2s forwards';
+    n.style.animation = 'donglai 2s forwards';
+   setTimeout(() => {
+        m.style.opacity = '0';
+        m.style.visibility = 'hidden';
+        m.style.pointerEvents = 'none';
+        n.style.opacity = '0';
+        n.style.visibility = 'hidden';
+        n.style.pointerEvents = 'none';
+        m.style.animation = '';
+        n.style.animation = '';
+    }, 2000);
+}
+    
+  const canvas = document.getElementById("confettiCanvas");
+  const ctx = canvas.getContext("2d");
+  let confetti = [];
+
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  window.addEventListener("resize", resizeCanvas);
+  resizeCanvas();
+
+  class Confetto {
+    constructor(x, y) {
+      this.x = x;
+      this.y = y;
+      this.size = Math.random() * 6 + 4;
+      this.color = Confetto.colors[Math.floor(Math.random()*Confetto.colors.length)];
+      this.vx = (Math.random() - 0.5) * 6;
+      this.vy = - (Math.random() * 7 + 5);
+      this.gravity = 0.2;
+      this.alpha = 1;
+      this.rotation = Math.random() * Math.PI * 2;
+      this.vr = (Math.random()-0.5) * 0.2;
+    }
+    update() {
+      this.x += this.vx;
+      this.y += this.vy;
+      this.vy += this.gravity;
+      this.rotation += this.vr;
+      this.alpha -= 0.01;
+    }
+    draw(ctx) {
+      ctx.save();
+      ctx.globalAlpha = this.alpha;
+      ctx.translate(this.x, this.y);
+      ctx.rotate(this.rotation);
+      ctx.fillStyle = this.color;
+      ctx.fillRect(-this.size/2, -this.size/2, this.size, this.size);
+      ctx.restore();
+    }
+  }
+  Confetto.colors = ["#ff3b3b","#ff9f1c","#ffd60a","#11cdef","#6a6cff","#b76bff","#2ecc71"];
+
+  function loop() {
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    confetti = confetti.filter(c => c.alpha > 0);
+    for(let c of confetti){
+      c.update();
+      c.draw(ctx);
+    }
+    requestAnimationFrame(loop);
+  }
+  loop();
+  function banconfetti() {
+        const rect = canvas.getBoundingClientRect();
+    const cx = rect.width/2;
+    const cy = rect.height/2;
+    for(let i=0;i<100;i++){
+      confetti.push(new Confetto(cx, cy));
+    }
+  }
+const ms1 = " Anh chúc em sẽ luôn có thật nhiều cơ hội làm điều em thích — được đi show, gặp những nghệ sĩ mà em yêu mến, và quan trọng nhất là giữ mãi ngọn lửa đam mê rực cháy này nha 💫"
+const ms2 = " Chúc em mỗi ngày đều tràn ngập niềm vui và hạnh phúc, mọi nỗi buồn nếu có cũng sẽ tan biến thật nhanh he....."
+const ms3 = " Anh tin rằng trên con đường em đã chọn, dù có bao thử thách thì em vẫn sẽ vững bước và tỏa sáng rực rỡ. Chúc em luôn mạnh mẽ, kiên định và thành công với chính con đường đó nha của mình 🌙"
+const ms4 = " Chúc em ngày càng đẹp hơn  — từ dáng vẻ, nụ cười, cho đến sự tự tin. Em không cần cố gắng để hoàn hảo, vì ngay cả khi giản đơn nhất, em vẫn khiến người khác chẳng thể rời mắt gòi đó 💞 "
+const ms5 = " Anh mong rằng em sẽ gặp được một người thật xứng đáng — người biết trân trọng, yêu thương, và luôn khiến em cảm thấy yên bình mỗi khi ở bên 💌"
+  
+
+let y = 0;
+let tat = [0,0,0,0,0]; 
+function hienLoiChuc(n) {
+  let mes1 = document.getElementById(`loi${n}`);
+  let mes2 = document.getElementById(`loi${n}${n}`);
+  if (tat[n - 1] == 0) {
+    y++;
+    tat[n - 1] = 1;
+
+  
+
+  banconfetti();
+    [mes1, mes2].forEach(el => {
+      el.style.animation = "tora 2s forwards";
+      el.style.opacity = "1";
+      el.style.pointerEvents = "auto";
+      el.style.visibility = "visible";
+    });
+  }
+  else {
+  banconfetti();
+    [mes1, mes2].forEach(el => {
+      el.style.animation = "tora 2s forwards";
+      el.style.opacity = "1";
+      el.style.pointerEvents = "auto";
+      el.style.visibility = "visible";
+    });
+  }
+
+if (y === 5) {
+    // 1. CHUẨN BỊ HIỆU ỨNG TÔ MÀU (MICRO-DIVS)
+    taodiv();
+
+    // Thời điểm các hiệu ứng bắt đầu sau khi mở lời chúc cuối cùng:
+    const delayStartMicroDiv = 5000; 
+    const durationMicroDivEffect =9000; // Hiệu ứng tô màu kéo dài 6 giây (5000/10ms = 500 lần gọi)
+    const delayStartFadeOut = 9000; // 5 giây sau lời chúc cuối (bắt đầu hơi sớm hơn tô màu)
+    
+    // 2. BẮT ĐẦU HIỆU ỨNG TÔ MÀU
+    setTimeout(() => {
+        // Khởi động hàm bien() mỗi 10ms (rất nhanh) để tạo hiệu ứng "tô màu" dứt khoát
+        leuleu = setInterval(bien, 10); 
+
+        // 3. DỪNG HIỆU ỨNG TÔ MÀU sau một khoảng thời gian nhất định
+        setTimeout(() => {
+            clearInterval(leuleu);
+        }, durationMicroDivEffect);
+
+    }, delayStartMicroDiv);
+
+    // 4. BẮT ĐẦU HIỆU ỨNG CHUYỂN CẢNH (Mờ ảnh, đổi nền)
+    setTimeout(() => {
+        document.body.style.transition = "background 2s ease";
+        document.body.style.background = "white";
+
+        const imgs = document.querySelectorAll('.to img, img#imgQA2');
+        imgs.forEach(img => {
+            // Làm mờ ảnh
+            img.style.transition = "opacity 1.4s ease, transform 1.4s ease";
+            img.style.opacity = "0";
+            img.style.transform = "scale(0.98)";
+            img.style.pointerEvents = "none";
+
+            // Xóa ảnh khỏi DOM sau khi chuyển cảnh mờ kết thúc
+            const onEnd = (e) => {
+                if (e.propertyName === 'opacity') {
+                    img.remove(); // Dùng remove() thay vì display: none; để dọn dẹp DOM
+                    img.removeEventListener('transitionend', onEnd);
+                }
+            };
+            img.addEventListener('transitionend', onEnd);
+        });document.getElementById("het").style.transition = "opacity 3s ease";
+        document.getElementById("het").style.opacity = "1";
+    } 
+    , delayStartFadeOut);
+}
+}
+function taodiv() {
+  for (let i = 1; i <= 10000; i++) {
+    const el = document.createElement('div');
+    el.className = 'micro-div';
+    el.id = 'm' + i;
+    el.style.top = Math.random() * 100 + 'vh'; 
+    el.style.left = Math.random() * 100 + 'vw';
+    document.body.appendChild(el); 
+    
+  }
+}
+c=1;
+k = Array.from({ length: 10000 }, (_, i) => i + 1);
+function bien() {
+    if (k.length == 0) {
+    clearInterval(leuleu);
+    return;
+  }
+  a = Math.floor(Math.random() * k.length);
+  const b = document.getElementById('m' + k[a]);
+  
+  for( let i = 0; i<c;i++){
+
+  if(b) {
+        b.style.opacity = '1';
+        b.style.visibility = 'visible';
+    }
+      k.splice(a,1);
+}
+if (c < 30) {
+  c++;
+}else {
+  c = 30; 
+}
+}
+
+
+
+
+
+function chuc1() { hienLoiChuc(1); }
+function chuc2() { hienLoiChuc(2); }
+function chuc3() { hienLoiChuc(3); }
+function chuc4() { hienLoiChuc(4); }
+function chuc5() { hienLoiChuc(5); }
+      function createHeart() {
+        const heart = document.createElement('div');
+        heart.className = 'heart';
+        heart.innerHTML = Math.random() > 0.5 ? '💖' : '💝';
+        heart.style.left = Math.random() * 100 + '%';
+        heart.style.zIndex = 1000;
+        heart.style.animationDuration = (Math.random() * 3 + 4) + 's';
+        heart.style.fontSize = (Math.random() * 10 + 15) + 'px';
+        
+        document.getElementById('heartsContainer').appendChild(heart);
+        
+        setTimeout(() => {
+          heart.remove();
+        }, 6000);
+      }
+      setInterval(createHeart, 800);
+
+      for(let i = 0; i < 5; i++) {
+        setTimeout(createHeart, i * 200);
+      }
+  </script>
+  </body>
+</html>
